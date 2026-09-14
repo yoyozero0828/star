@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -193,7 +193,24 @@
         .ornament{font-size:1.4rem;letter-spacing:.6em;color:#fcd34d;text-shadow:0 0 18px rgba(252,211,77,.5)}
         .final-note{max-width:650px;color:#cbd5e1;line-height:1.9;font-size:1rem}
         .promise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px;max-width:620px}.promise-grid div{padding:14px 10px;border-radius:18px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#dbeafe}.promise-grid i{display:block;margin-bottom:7px;color:#fbbf24;font-size:1rem}
-        @media(max-width:640px){.quote-card{padding:22px 20px;margin:0 16px}.promise-grid{grid-template-columns:1fr;margin:18px 20px}.page-number{right:18px;top:18px}.story-kicker{font-size:.62rem}.mini-pills{padding:0 12px}}
+        @media(max-width:640px){
+            .quote-card{padding:22px 20px;margin:0 16px}
+            .promise-grid{grid-template-columns:1fr;margin:18px 20px}
+            .page-number{right:18px;top:18px}
+            .story-kicker{font-size:.62rem}
+            .mini-pills{padding:0 12px}
+
+            /* 手機版避免最後一頁按鈕被底部切掉 */
+            body{overflow:hidden}
+            main{height:100dvh; padding:calc(env(safe-area-inset-top, 0px) + 16px) 18px calc(env(safe-area-inset-bottom, 0px) + 24px) !important; display:flex; align-items:center; justify-content:center}
+            section{width:100%; max-height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch}
+            #page-7{justify-content:center !important; padding:16px 0 28px !important; gap:1.5rem !important}
+            #page-7 #final-content{width:100%; max-width:100%; padding:0 4px}
+            #page-7 #final-title{font-size:2rem !important; line-height:1.25}
+            #page-7 #choice-buttons{gap:1rem !important; padding-bottom:8px}
+            #page-7 #choice-buttons button{width:min(100%, 320px); padding:0.9rem 1.25rem !important; font-size:1rem !important; white-space:normal}
+            #page-7 #result-animation{padding-bottom:16px}
+        }
 
         /* Ring animation */
         .ring-animation {
@@ -315,9 +332,9 @@
                     終於發現了那顆最珍貴、最獨特的星系。<br/><span class="text-sm text-slate-500 inline-block mt-5">不是刻意尋找，卻總會在不經意間，把目光停留在你身上。</span>
                 </p>
             </div>
-            <button onclick="nextPage(4)" class="mt-12 group flex items-center space-x-3 text-white">
-                <span class="tracking-widest">走向你</span>
-                <div class="w-12 h-[1px] bg-white/30 group-hover:w-20 transition-all"></div>
+            <button onclick="nextPage(4)" class="btn-starry mt-12 px-10 py-3 rounded-full text-white font-medium tracking-widest flex items-center gap-3">
+                <span>走向你</span>
+                <i class="fa-solid fa-arrow-right text-sm"></i>
             </button>
         </section>
 
@@ -371,8 +388,9 @@
                     在每一個你需要的時候，為你亮起。<div class="promise-grid"><div><i class="fa-solid fa-sun"></i>晴天時，陪你分享快樂</div><div><i class="fa-solid fa-moon"></i>夜晚時，陪你守著安靜</div><div><i class="fa-solid fa-star"></i>未來裡，一起繼續閃耀</div></div>
                 </p>
             </div>
-            <button onclick="nextPage(7)" class="mt-8 text-blue-400 hover:text-blue-200 transition-colors">
-                最後，我想說...
+            <button onclick="nextPage(7)" class="btn-starry mt-8 px-10 py-3 rounded-full text-white font-medium tracking-widest flex items-center gap-3">
+                <span>最後，我想說...</span>
+                <i class="fa-solid fa-heart text-sm"></i>
             </button>
         </section>
 
