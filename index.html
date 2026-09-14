@@ -183,6 +183,18 @@
         }
         @keyframes shine { 0%,70% { left:-120%; } 100% { left:150%; } }
     
+
+        /* Richer visual layout */
+        .story-kicker{letter-spacing:.42em;text-transform:uppercase;color:#a5b4fc;font-size:.72rem;font-weight:600}
+        .story-line{width:120px;height:1px;background:linear-gradient(90deg,transparent,#93c5fd,transparent);margin:18px auto}
+        .quote-card{max-width:760px;padding:28px 34px;background:linear-gradient(135deg,rgba(30,41,80,.52),rgba(88,28,135,.18));border:1px solid rgba(191,219,254,.18);border-radius:28px;box-shadow:0 24px 80px rgba(0,0,0,.22)}
+        .mini-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}.mini-pills span{padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#cbd5e1}
+        .page-number{position:absolute;top:26px;right:36px;font-size:.72rem;letter-spacing:.28em;color:rgba(255,255,255,.28)}
+        .ornament{font-size:1.4rem;letter-spacing:.6em;color:#fcd34d;text-shadow:0 0 18px rgba(252,211,77,.5)}
+        .final-note{max-width:650px;color:#cbd5e1;line-height:1.9;font-size:1rem}
+        .promise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px;max-width:620px}.promise-grid div{padding:14px 10px;border-radius:18px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#dbeafe}.promise-grid i{display:block;margin-bottom:7px;color:#fbbf24;font-size:1rem}
+        @media(max-width:640px){.quote-card{padding:22px 20px;margin:0 16px}.promise-grid{grid-template-columns:1fr;margin:18px 20px}.page-number{right:18px;top:18px}.story-kicker{font-size:.62rem}.mini-pills{padding:0 12px}}
+
         /* Ring animation */
         .ring-animation {
             position: relative;
@@ -257,14 +269,19 @@
         
         <!-- 1. 開場 -->
         <section id="page-1" class="active h-full flex-col items-center justify-center text-center space-y-8" data-element-id="07157bc9-e5e0-43f0-8a83-6800d9919224">
+            <div class="page-number">01 / 08</div>
             <span class="inline-block text-indigo-400 font-light tracking-[0.5em] uppercase animate-pulse">Celestial Love Story</span>
             <h1 class="text-4xl md:text-6xl font-light tracking-widest text-white leading-tight opacity-0 animate-[fadeIn_2s_ease-out_forwards]">
                 想握住此生遼闊<br>
                 <span class="italic">贈你滿目星河</span>
             </h1>
-            <p class="text-base md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed px-4">
-                世間，恒能引動我的，唯日月星辰之姿。山川湖海之美。而你，是這萬千星辰中，最璀璨的那一顆。
-            </p>
+            <div class="quote-card">
+                <p class="text-base md:text-xl font-light text-slate-200 max-w-2xl mx-auto leading-relaxed">
+                    世間能讓我駐足的，有日月星辰、山川湖海。<br>
+                    而你出現之後，我才發現——原來心動，也可以像星光一樣，安靜卻讓整片夜空變得明亮。
+                </p>
+                <div class="mini-pills"><span>從相遇開始</span><span>把心意藏進星光</span><span>寫給獨一無二的你</span></div>
+            </div>
             <button onclick="nextPage(2)" class="btn-starry px-8 py-3 bg-white/10 border border-white/20 rounded-full text-sm tracking-widest hover:bg-white/20 transition-all mt-8" data-element-id="7fc6d503-ed55-4bd9-b74d-77ed80502cc5">
                 開啟星際之旅 <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
             </button>
@@ -272,6 +289,7 @@
 
         <!-- 2. 相遇 -->
         <section id="page-2" class="h-full flex-col items-center justify-center text-center space-y-8">
+            <div class="page-number">02 / 08</div>
             <div class="glass-card p-10 md:p-16 max-w-2xl">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-200">初見</h2>
                 <p class="text-lg md:text-xl leading-relaxed text-gray-300">
@@ -287,13 +305,14 @@
 
         <!-- 3. 心動 -->
         <section id="page-3" class="h-full flex-col items-center justify-center text-center space-y-8">
+            <div class="page-number">03 / 08</div>
             <div class="relative">
                 <div class="absolute -top-12 -left-12 w-24 h-24 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
                 <h2 class="text-3xl md:text-5xl font-light mb-8 italic">「不自覺的目光」</h2>
                 <p class="text-lg md:text-xl text-gray-300 leading-loose">
                     慢慢地，我發現自己總是不自覺地尋找你的身影。<br>
                     像天文學家在浩瀚星海中，<br>
-                    終於發現了那顆最珍貴、最獨特的星系。
+                    終於發現了那顆最珍貴、最獨特的星系。<br/><span class="text-sm text-slate-500 inline-block mt-5">不是刻意尋找，卻總會在不經意間，把目光停留在你身上。</span>
                 </p>
             </div>
             <button onclick="nextPage(4)" class="mt-12 group flex items-center space-x-3 text-white">
@@ -304,13 +323,14 @@
 
         <!-- 4. 你是星星 -->
         <section id="page-4" class="h-full flex-col items-center justify-center text-center space-y-8">
+            <div class="page-number">04 / 08</div>
             <div class="glass-card p-8 border-yellow-500/20">
                 <i class="fa-solid fa-star text-yellow-400 text-4xl mb-6 animate-spin-slow"></i>
                 <h2 class="text-3xl font-bold mb-6">你是我的星星</h2>
                 <p class="text-lg text-gray-300 px-4">
                     你就像一顆星星，安靜卻耀眼。<br>
                     你有你的稜角，有你的光芒，<br>
-                    在我眼裡，你是這宇宙唯一的奇蹟。
+                    在我眼裡，你是這宇宙唯一的奇蹟。<br/><span class="text-sm text-slate-400 inline-block mt-5">就算世界很大，我也總能在星海裡，一眼找到你。</span>
                 </p>
             </div>
             <button onclick="nextPage(5)" class="px-10 py-3 bg-yellow-500/20 border border-yellow-500/40 rounded-full text-yellow-100 hover:bg-yellow-500/40 transition-all">
@@ -320,23 +340,23 @@
 
         <!-- 5. 我是太陽 -->
         <section id="page-5" class="h-full flex-col items-center justify-center text-center space-y-8">
+            <div class="page-number">05 / 08</div>
             <div class="sun-glow-trigger">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-yellow-400 drop-shadow-[0_0_15px_rgba(255,223,0,0.5)]">
-                    我是太陽，為你發光
-                </h2>
+                <div class="story-kicker mb-4">Chapter 04 · Be your sunshine</div><h2 class="text-4xl md:text-5xl font-bold mb-8 text-yellow-400 drop-shadow-[0_0_15px_rgba(255,223,0,0.5)]">我是太陽，讓你發光</h2>
                 <p class="text-xl text-gray-200 max-w-xl mx-auto leading-relaxed">
                     如果可以，我願成為你的太陽。<br>
                     你尷尬不知所措的時候，我會成為你的光，<br>
-                    當你想綻放你的光芒的時候，我會祝你一臂之力。
+                    當你想綻放你的光芒的時候，我會祝你一臂之力。<br/><span class="text-sm text-slate-400 inline-block mt-5">我不想遮住你的光，只想在你需要時，替你照亮前方。</span>
                 </p>
             </div>
             <button onclick="nextPage(6)" class="mt-10 px-8 py-3 glass-card hover:bg-white/10 transition-colors">
-                守護這份溫暖
+                我願意
             </button>
         </section>
 
         <!-- 6. 陪伴 -->
         <section id="page-6" class="h-full flex-col items-center justify-center text-center space-y-8">
+            <div class="page-number">06 / 08</div>
             <div class="ring-animation" aria-label="戒指動畫">
                 <div class="ring-gem"></div>
                 <span class="ring-spark">✦</span>
@@ -348,7 +368,7 @@
                 <p class="text-lg text-gray-400 italic">
                     無論星移斗轉，無論明暗更替。<br>
                     我都想一直待在你身邊，<br>
-                    在每一個你需要的時候，為你亮起。
+                    在每一個你需要的時候，為你亮起。<div class="promise-grid"><div><i class="fa-solid fa-sun"></i>晴天時，陪你分享快樂</div><div><i class="fa-solid fa-moon"></i>夜晚時，陪你守著安靜</div><div><i class="fa-solid fa-star"></i>未來裡，一起繼續閃耀</div></div>
                 </p>
             </div>
             <button onclick="nextPage(7)" class="mt-8 text-blue-400 hover:text-blue-200 transition-colors">
@@ -358,6 +378,7 @@
 
         <!-- 7. 告白 -->
         <section id="page-7" class="h-full flex-col items-center justify-center text-center space-y-12">
+            <div class="page-number">07 / 08</div>
             <div class="space-y-6">
                 <h2 class="text-5xl md:text-7xl font-bold text-white tracking-widest font-serif">星希</h2>
                 <p class="text-2xl md:text-3xl text-blue-200 font-light">
@@ -371,6 +392,7 @@
 
         <!-- 8. 結尾互動 -->
         <section id="page-8" class="h-full flex-col items-center justify-center text-center space-y-10">
+            <div class="page-number">08 / 08</div>
             <div id="final-content" class="space-y-8">
                 <h2 id="final-title" class="text-4xl md:text-6xl font-bold text-white">星希，我喜歡你</h2>
                 <div id="choice-buttons" class="flex flex-col md:flex-row gap-6 items-center justify-center">
